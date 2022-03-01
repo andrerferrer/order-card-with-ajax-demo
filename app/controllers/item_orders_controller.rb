@@ -2,7 +2,13 @@ class ItemOrdersController < ApplicationController
   def destroy
     @item_order = ItemOrder.find(params[:id])
     @item_order.destroy
-    redirect_to request.referrer
+    respond_to do |format|
+      format.html { redirect_to request.referrer }
+      format.json {
+        head :no_content # respond with nothing. It means it's nice 🤓
+      }
+    end
+    
   end
 
   def update
