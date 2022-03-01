@@ -1,0 +1,43 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+
+  .card {
+    .form-container {
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      background-color: white;
+      padding: 30px;
+      width: 350px;
+      margin: 0 auto;
+    }
+    
+    .flex-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .submit {
+      width: 100%;
+      margin-top: 10px;
+    }
+    
+    .counter {
+      margin: 0 15px;
+    }
+    
+    .round-bordered {
+      border: 1px solid #5a5a5a;
+      border-radius: 50%;
+      width: 35px;
+      font-size: 18px;
+      color: #848484;
+      height: 35px;
+      padding: 3px
+    }
+    
+  }
+}
