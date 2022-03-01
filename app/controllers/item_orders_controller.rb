@@ -15,6 +15,11 @@ class ItemOrdersController < ApplicationController
     @item_order = ItemOrder.find(params[:id])
     @item_order.quantity += params[:offset].to_i
     @item_order.save
-    redirect_to request.referrer
+    respond_to do |format|
+      format.html { redirect_to request.referrer }
+      format.json {
+        render :update#.json.jbuilder
+      }
+    end
   end
 end
