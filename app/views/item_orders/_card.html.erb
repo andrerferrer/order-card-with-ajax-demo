@@ -1,11 +1,11 @@
-<div class="card text-center">
+<div class="card text-center" data-controller='item-orders'>
   <div class="form-container">
     <div class="flex-between">
       <%= pluralize item_order.quantity, item_order.item.name %>:
       <div class="actions">
         <%# if the quantity is 1, delete; else, update %>
         <% if item_order.quantity == 1 %>
-          <%= link_to  "-", item_order_path(item_order), method: :delete, class: "btn round-bordered incrementer minus" %>
+          <%= link_to  "-", item_order_path(item_order), data: { action: 'click->item-orders#destroy',item_orders_target: 'deleteBtn' }, method: :delete, class: "btn round-bordered incrementer minus" %>
         <% else %>
           <%= link_to  "-", item_order_path(item_order, offset: -1), method: :patch, class: "btn round-bordered incrementer minus" %>
         <% end %>
